@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<style>
+  head{
+    font-family: "Roboto", sans-serif;
+    color: purple;
+    background-color: lightgreen;
+  }
+  body{
+    font-family: "Roboto", sans-serif;
+    color: purple;
+    background-color: lightgreen;
+    overflow-x: hidden;
+
+    
+  }
+  p{
+    color: purple;
+    font-weight: bold;
+  }
+  button{
+    background-color: black;
+    border: none;
+    color: lightgreen;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+
+  }
+  h1{
+    align-items: center;
+    text-align: center;
+
+  }
+  h2{
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+  }
+  .buttonallign{
+    text-align: center;
+  }
+  form{
+    text-align: center;
+    margin-top: 1px;
+  }
+  .profile{
+    text-align: right;
+  }
+  </style>
+<head>
+  {% if user.is_authenticated %}
+    <div class="profile">
+      <a href="{% url 'profile' %}"><button type="submit">Profile</button></a>
+    </div>
+    {% else %}
+    <div class="profile">
+      <a href="{% url 'login' %}"><button type="submit">Log In</button></a>
+    </div>
+    {% endif %}
+  <meta charset="utf-8">
+  <h1>Welcome To G &amp; L Product Reviews</h1>
+  <title>{% block title %}Base Page{% endblock %}</title>
+</head>
+
+<body>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+
+</html>

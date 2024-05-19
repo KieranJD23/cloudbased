@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+  head{
+    font-family: "Roboto", sans-serif;
+    color: purple;
+    background-color: lightgreen;
+  }
+  body{
+    font-family: "Roboto", sans-serif;
+    color: purple;
+    background-color: lightgreen;
+    overflow-x: hidden;
+
+    
+  }
+  button{
+    background-color: black;
+    border: none;
+    color: lightgreen;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+
+  }
+  h1{
+    align-items: center;
+    text-align: center;
+
+  }
+  h2{
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+  }
+  .navbar{
+    text-align: center;
+  }
+  .buttonallign{
+    text-align: center;
+  }
+  .profile{
+    text-align: right;
+  }
+  </style>
+  <head>
+    {% if user.is_authenticated %}
+    <div class="profile">
+      <a href="{% url 'profile' %}"><button type="submit">Profile</button></a>
+    </div>
+    {% else %}
+    <div class="profile">
+      <a href="{% url 'login' %}"><button type="submit">Log In</button></a>
+    </div>
+    {% endif %}
+    <meta charset="utf-8">
+    <h1>Welcome To G &amp; L Product Reviews</h1>
+    <title>{% block title %}Contact Page{% endblock %}</title>
+    <div class="navbar">
+      <a href="{% url 'home' %}"><button type="submit">Home</button></a>
+      <a href="{% url 'about' %}"><button type="submit">About Us</button></a>
+      <a href="{% url 'contact' %}"><button type="submit">Contact Us</button></a>
+      <a href="{% url 'products' %}"><button type="submit">Products</button></a>
+      <hr>
+    </div>
+  </head>
+  <body>
+    <div class="first-section">
+      <h2>first bit of information</h2>
+      <hr>
+    </div>
+    <div class="second-section">
+      <h2>second bit of information</h2>
+      <hr>
+    </div>
+  </body>
